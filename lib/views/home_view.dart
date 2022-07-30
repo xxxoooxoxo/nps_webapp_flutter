@@ -9,9 +9,16 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(children: const [
-        nav.NavigationBar(),
-      ]),
+      body: Column(
+        children: [
+          nav.NavigationBar(),
+          Container(
+            width: 200,
+            height: 300,
+            child: Text("container"),
+          ),
+        ],
+      ),
     );
   }
 }
