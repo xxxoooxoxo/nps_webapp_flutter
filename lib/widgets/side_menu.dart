@@ -16,9 +16,22 @@ class SideMenu extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
 
     return Container(
-      color: light,
+      decoration: BoxDecoration(
+        color: grey,
+        border: Border(
+          left: BorderSide(width: 2, color: dark.withOpacity(.2)),
+        ),
+      ),
       child: ListView(
         children: [
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: CustomText(
+              text: "Locations",
+              size: 24,
+              weight: FontWeight.w600,
+            ),
+          ),
           if (Responsive.isSmallScreen(context))
             Column(
               mainAxisSize: MainAxisSize.min,

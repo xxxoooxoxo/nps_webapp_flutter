@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:nps_webapp/pages/overview/widgets/activity_card.dart';
+import 'package:nps_webapp/pages/overview/widgets/gauge_card.dart';
+import 'package:nps_webapp/pages/overview/widgets/graph_card.dart';
 import 'package:nps_webapp/pages/overview/widgets/info_card.dart';
+import 'package:nps_webapp/pages/overview/widgets/measurements_card.dart';
+import 'package:nps_webapp/pages/overview/widgets/recent_events_card.dart';
 
 class OverviewCardsLarge extends StatelessWidget {
   const OverviewCardsLarge({Key? key}) : super(key: key);
@@ -9,46 +14,48 @@ class OverviewCardsLarge extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
 
     return Padding(
-      padding: const EdgeInsets.all(60.0),
-      child: Row(
+      padding: const EdgeInsets.only(left: 60, top: 20, right: 60),
+      child: Column(
         children: [
-          InfoCard(
-            title: "Rides in progress",
-            value: "7",
-            onTap: () {},
-            topColor: Colors.orange,
-            isActive: false,
+          Row(
+            children: [
+              ActivityCard(),
+              SizedBox(width: width / 64),
+              RecentEventsCard(),
+            ],
           ),
           SizedBox(
-            width: width / 64,
+            height: width / 64,
           ),
-          InfoCard(
-            title: "Past rides",
-            value: "32",
-            onTap: () {},
-            topColor: Colors.green.shade300,
-            isActive: false,
-          ),
-          SizedBox(
-            width: width / 64,
-          ),
-          InfoCard(
-            title: "Rides Pending",
-            value: "23",
-            onTap: () {},
-            topColor: Colors.blueAccent,
-            isActive: false,
+          Row(
+            children: [
+              MeasurementsCard(),
+              SizedBox(
+                width: width / 64,
+              ),
+              GraphCard(),
+            ],
           ),
           SizedBox(
-            width: width / 64,
+            height: width / 64,
           ),
-          InfoCard(
-            title: "Rides Cancelled",
-            value: "3",
-            onTap: () {},
-            topColor: Colors.red,
-            isActive: false,
-          ),
+          Row(
+            children: [
+              GaugeCard(),
+              SizedBox(
+                width: width / 64,
+              ),
+              GaugeCard(),
+              SizedBox(
+                width: width / 64,
+              ),
+              GaugeCard(),
+              SizedBox(
+                width: width / 64,
+              ),
+              GaugeCard(),
+            ],
+          )
         ],
       ),
     );

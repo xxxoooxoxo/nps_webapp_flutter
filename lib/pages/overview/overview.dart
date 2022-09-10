@@ -14,24 +14,6 @@ class OverviewPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Obx(
-          (() => Row(
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(
-                        top: Responsive.isSmallScreen(context) ? 56 : 6),
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: CustomText(
-                        text: menuController.activeItem.value,
-                        size: 36,
-                        weight: FontWeight.bold,
-                      ),
-                    ),
-                  )
-                ],
-              )),
-        ),
         Expanded(
           child: ListView(
             children: [

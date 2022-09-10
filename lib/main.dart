@@ -21,17 +21,17 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Dashboard Test',
       theme: ThemeData(
-          scaffoldBackgroundColor: Colors.white,
-          textTheme:
-              GoogleFonts.mulishTextTheme(Theme.of(context).textTheme).apply(
-            bodyColor: Colors.black,
-          ),
-          pageTransitionsTheme: const PageTransitionsTheme(builders: {
-            TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
-            TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
-            TargetPlatform.macOS: FadeUpwardsPageTransitionsBuilder(),
-          }),
-          primaryColor: Colors.red),
+        scaffoldBackgroundColor: Color(0xfff6F6F6),
+        textTheme:
+            GoogleFonts.openSansTextTheme(Theme.of(context).textTheme).apply(
+          bodyColor: Colors.black,
+        ),
+        pageTransitionsTheme: const PageTransitionsTheme(builders: {
+          TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
+          TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
+          TargetPlatform.macOS: FadeUpwardsPageTransitionsBuilder(),
+        }),
+      ),
       home: SiteLayout(),
     );
   }
