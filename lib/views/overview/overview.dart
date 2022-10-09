@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:nps_webapp/constants/controllers.dart';
 import 'package:nps_webapp/helpers/responsive.dart';
-import 'package:nps_webapp/pages/overview/widgets/overview_card_large.dart';
-import 'package:nps_webapp/pages/overview/widgets/overview_card_medium.dart';
-import 'package:nps_webapp/pages/overview/widgets/overview_card_small.dart';
+import 'package:nps_webapp/views/overview/widgets/overview_card_large.dart';
+import 'package:nps_webapp/views/overview/widgets/overview_card_small.dart';
 import 'package:nps_webapp/widgets/custom_text.dart';
 
 class OverviewPage extends StatelessWidget {
@@ -19,8 +18,6 @@ class OverviewPage extends StatelessWidget {
             children: [
               if (Responsive.isLargeScreen(context))
                 const OverviewCardsLarge()
-              else if (Responsive.isMediumScreen(context))
-                const OverviewCardsMedium()
               else
                 const OverviewCardsSmall()
             ],

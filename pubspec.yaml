@@ -38,6 +38,10 @@ dependencies:
   syncfusion_flutter_charts: ^20.2.40
   get: ^4.6.5
   google_fonts: ^3.0.1
+  syncfusion_flutter_gauges: ^20.2.49
+  url_launcher: ^6.1.6
+  dotted_border: ^2.0.0+2
+  toggle_switch: ^2.0.1
 
 dev_dependencies:
   flutter_test:

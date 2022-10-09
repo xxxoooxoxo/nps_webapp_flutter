@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nps_webapp/pages/overview/widgets/info_card.dart';
+import 'package:nps_webapp/views/overview/widgets/info_card.dart';
 
 class OverviewCardsSmall extends StatelessWidget {
   const OverviewCardsSmall({Key? key}) : super(key: key);

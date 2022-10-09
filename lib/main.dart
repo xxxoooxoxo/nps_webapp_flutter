@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nps_webapp/controllers/influx_controller.dart';
 import 'package:nps_webapp/site_layout.dart';
-
 import 'controllers/menu_controller.dart';
 import 'controllers/navigation_controller.dart';
 
 void main() {
   Get.put(MenuController());
   Get.put(NavigationController());
+  Get.put(InfluxController());
   runApp(const MyApp());
 }
 
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Dashboard Test',
       theme: ThemeData(
-        scaffoldBackgroundColor: Color(0xfff6F6F6),
+        fontFamily: GoogleFonts.openSans().fontFamily,
+        scaffoldBackgroundColor: Colors.white,
         textTheme:
             GoogleFonts.openSansTextTheme(Theme.of(context).textTheme).apply(
           bodyColor: Colors.black,
