@@ -10,7 +10,10 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
       leading: !Responsive.isSmallScreen(context)
           ? SizedBox()
           : IconButton(
-              icon: const Icon(Icons.menu),
+              icon: const Icon(
+                Icons.menu,
+                color: Colors.white,
+              ),
               onPressed: () {
                 key.currentState?.openDrawer();
               }),

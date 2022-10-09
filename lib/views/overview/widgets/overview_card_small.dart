@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:nps_webapp/views/overview/widgets/graph_card.dart';
+import 'package:nps_webapp/views/overview/widgets/graph_card_small.dart';
+import 'package:nps_webapp/views/overview/widgets/humid_gauge.dart';
 import 'package:nps_webapp/views/overview/widgets/info_card.dart';
+import 'package:nps_webapp/views/overview/widgets/pm_gauge.dart';
+import 'package:nps_webapp/views/overview/widgets/temp_gauge.dart';
 
 class OverviewCardsSmall extends StatelessWidget {
   const OverviewCardsSmall({Key? key}) : super(key: key);
@@ -8,46 +13,40 @@ class OverviewCardsSmall extends StatelessWidget {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     return Container(
-      height: 400,
-      padding: const EdgeInsets.all(60.0),
-      child: Column(
+      height: height - 70,
+      child: ListView(
+        padding: EdgeInsets.symmetric(horizontal: 40),
         children: [
-          InfoCard(
-            title: "Rides in progress",
-            value: "7",
-            onTap: () {},
-            topColor: Colors.orange,
-            isActive: false,
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20.0),
+            child: Text(
+              "THETA NODE",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 26,
+                  fontWeight: FontWeight.bold,
+                  fontStyle: FontStyle.italic),
+            ),
           ),
+          TempGauge(),
           SizedBox(
             height: height / 64,
           ),
-          InfoCard(
-            title: "Past rides",
-            value: "32",
-            onTap: () {},
-            topColor: Colors.green.shade300,
-            isActive: false,
-          ),
+          HumidityGauge(),
           SizedBox(
             height: height / 64,
           ),
-          InfoCard(
-            title: "Rides Pending",
-            value: "23",
-            onTap: () {},
-            topColor: Colors.blueAccent,
-            isActive: false,
-          ),
+          PMGauge10(),
           SizedBox(
             height: height / 64,
           ),
-          InfoCard(
-            title: "Rides Cancelled",
-            value: "3",
-            onTap: () {},
-            topColor: Colors.red,
-            isActive: false,
+          PMGauge25(),
+          SizedBox(
+            height: height / 64,
+          ),
+          GraphCardSmall(),
+          SizedBox(
+            height: height / 64,
           ),
         ],
       ),

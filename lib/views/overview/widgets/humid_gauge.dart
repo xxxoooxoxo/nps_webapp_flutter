@@ -47,7 +47,11 @@ class HumidityGauge extends StatelessWidget {
                                   widget: Column(
                                     mainAxisSize: MainAxisSize.min,
                                     children: <Widget>[
-                                      Text(controller.humidity.value.toString(),
+                                      Text(
+                                          controller.humidity.value == 0
+                                              ? "Loading"
+                                              : controller.humidity.value
+                                                  .toString(),
                                           style: const TextStyle(
                                               fontWeight: FontWeight.bold,
                                               fontSize: 24)),

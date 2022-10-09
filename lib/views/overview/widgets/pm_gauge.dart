@@ -23,7 +23,7 @@ class PMGauge10 extends StatelessWidget {
                 children: [
                   const Padding(
                     padding: EdgeInsets.only(top: 10.0),
-                    child: Text('Particulate Matter (10)',
+                    child: Text('PM 10',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontStyle: FontStyle.italic)),
@@ -49,7 +49,11 @@ class PMGauge10 extends StatelessWidget {
                                   widget: Column(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
-                                      Text(controller.pm10.value.toString(),
+                                      Text(
+                                          controller.pm10.value == 0
+                                              ? "Loading"
+                                              : controller.pm10.value
+                                                  .toString(),
                                           style: const TextStyle(
                                               fontWeight: FontWeight.bold,
                                               fontSize: 24)),
@@ -126,7 +130,7 @@ class PMGauge25 extends StatelessWidget {
                 children: [
                   const Padding(
                     padding: EdgeInsets.only(top: 10.0),
-                    child: Text('Particulate Matter (2.5)',
+                    child: Text('PM 2.5',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontStyle: FontStyle.italic)),
@@ -152,7 +156,11 @@ class PMGauge25 extends StatelessWidget {
                                   widget: Column(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
-                                      Text(controller.pm25.value.toString(),
+                                      Text(
+                                          controller.pm25.value == 0
+                                              ? "Loading"
+                                              : controller.pm25.value
+                                                  .toString(),
                                           style: const TextStyle(
                                               fontWeight: FontWeight.bold,
                                               fontSize: 24)),

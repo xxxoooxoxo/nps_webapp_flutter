@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nps_webapp/helpers/local_navigator.dart';
+import 'package:nps_webapp/helpers/responsive.dart';
 import 'package:nps_webapp/widgets/side_menu.dart';
 
 class LargeScreen extends StatelessWidget {
@@ -13,9 +14,10 @@ class LargeScreen extends StatelessWidget {
           flex: 4,
           child: localNavigator(),
         ),
-        const Expanded(
-          child: SideMenu(),
-        ),
+        if (Responsive.isLargeScreen(context))
+          const Expanded(
+            child: SideMenu(),
+          ),
       ],
     );
   }

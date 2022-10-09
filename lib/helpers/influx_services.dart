@@ -14,14 +14,14 @@ class DataServices {
   static var queryService = client.getQueryService();
   // defining function call to retrieve data
 
-  static Future<int> getHumidity() async {
+  static Future<int> getHumidity(node) async {
     var query = '''
     from(bucket: "NPS-Sensor-Data")
     |> range(start: -1h)
     |> filter(fn: (r) => r["_measurement"] == "mqtt_consumer")
     |> filter(fn: (r) => r["_field"] == "value")
     |> filter(fn: (r) => r["host"] == "nps-sensornet-broker")
-    |> filter(fn: (r) => r["topic"] == "/esp32s3_theta/bme280/humidity")
+    |> filter(fn: (r) => r["topic"] == "/esp32s3_$node/bme280/humidity")
     |> last()
     |> keep(columns: ["_value"])
 ''';
@@ -34,14 +34,14 @@ class DataServices {
     return val;
   }
 
-  static Future<int> getPM10() async {
+  static Future<int> getPM10(node) async {
     var query = '''
     from(bucket: "NPS-Sensor-Data")
     |> range(start: -1h)
     |> filter(fn: (r) => r["_measurement"] == "mqtt_consumer")
     |> filter(fn: (r) => r["_field"] == "value")
     |> filter(fn: (r) => r["host"] == "nps-sensornet-broker")
-    |> filter(fn: (r) => r["topic"] == "/esp32s3_theta/pmsaqi/pm10")
+    |> filter(fn: (r) => r["topic"] == "/esp32s3_$node/pmsaqi/pm10")
     |> last()
     |> keep(columns: ["_value"])
 ''';
@@ -54,14 +54,14 @@ class DataServices {
     return val;
   }
 
-  static Future<int> getPM25() async {
+  static Future<int> getPM25(node) async {
     var query = '''
     from(bucket: "NPS-Sensor-Data")
     |> range(start: -1h)
     |> filter(fn: (r) => r["_measurement"] == "mqtt_consumer")
     |> filter(fn: (r) => r["_field"] == "value")
     |> filter(fn: (r) => r["host"] == "nps-sensornet-broker")
-    |> filter(fn: (r) => r["topic"] == "/esp32s3_theta/pmsaqi/pm2_5")
+    |> filter(fn: (r) => r["topic"] == "/esp32s3_$node/pmsaqi/pm2_5")
     |> last()
     |> keep(columns: ["_value"])
 ''';
@@ -74,14 +74,14 @@ class DataServices {
     return val;
   }
 
-  static Future<int> getSound() async {
+  static Future<int> getSound(node) async {
     var query = '''
     from(bucket: "NPS-Sensor-Data")
     |> range(start: -1h)
     |> filter(fn: (r) => r["_measurement"] == "mqtt_consumer")
     |> filter(fn: (r) => r["_field"] == "value")
     |> filter(fn: (r) => r["host"] == "nps-sensornet-broker")
-    |> filter(fn: (r) => r["topic"] == "/esp32s3_theta/mic/dBA")
+    |> filter(fn: (r) => r["topic"] == "/esp32s3_$node/mic/dBA")
     |> last()
     |> keep(columns: ["_value"])
 ''';
@@ -94,14 +94,14 @@ class DataServices {
     return val;
   }
 
-  static Future<int> getTemp() async {
+  static Future<int> getTemp(node) async {
     var query = '''
     from(bucket: "NPS-Sensor-Data")
     |> range(start: -1h)
     |> filter(fn: (r) => r["_measurement"] == "mqtt_consumer")
     |> filter(fn: (r) => r["_field"] == "value")
     |> filter(fn: (r) => r["host"] == "nps-sensornet-broker")
-    |> filter(fn: (r) => r["topic"] == "/esp32s3_theta/bme280/temp")
+    |> filter(fn: (r) => r["topic"] == "/esp32s3_$node/bme280/temp")
     |> last()
     |> keep(columns: ["_value"])
 ''';
@@ -114,7 +114,7 @@ class DataServices {
     return val;
   }
 
-  static Future<ChartData> getChartData() async {
+  static Future<ChartData> getChartData(node) async {
     ChartData data = ChartData(DateTime.now(), 0);
     var query = '''
       from(bucket: "NPS-Sensor-Data")
@@ -122,7 +122,7 @@ class DataServices {
       |> filter(fn: (r) => r["_measurement"] == "mqtt_consumer")
       |> filter(fn: (r) => r["_field"] == "value")
       |> filter(fn: (r) => r["host"] == "nps-sensornet-broker")
-      |> filter(fn: (r) => r["topic"] == "/esp32s3_theta/pmsaqi/pm2_5")
+      |> filter(fn: (r) => r["topic"] == "/esp32s3_$node/pmsaqi/pm2_5")
       |> last()
     ''';
     var records = await queryService.query(query);
@@ -133,7 +133,7 @@ class DataServices {
     return data;
   }
 
-  static Future<List<ChartData>> fetchDataPM25() async {
+  static Future<List<ChartData>> fetchDataPM25(node) async {
     var dataList = <ChartData>[];
     var query = '''
       from(bucket: "NPS-Sensor-Data")
@@ -141,7 +141,7 @@ class DataServices {
       |> filter(fn: (r) => r["_measurement"] == "mqtt_consumer")
       |> filter(fn: (r) => r["_field"] == "value")
       |> filter(fn: (r) => r["host"] == "nps-sensornet-broker")
-      |> filter(fn: (r) => r["topic"] == "/esp32s3_theta/pmsaqi/pm2_5")
+      |> filter(fn: (r) => r["topic"] == "/esp32s3_$node/pmsaqi/pm2_5")
       |> aggregateWindow(every: 1m, fn: mean, createEmpty: false)
       |> yield(name: "mean")
     ''';
@@ -153,7 +153,7 @@ class DataServices {
     return dataList;
   }
 
-  static Future<List<ChartData>> fetchDataPM10() async {
+  static Future<List<ChartData>> fetchDataPM10(node) async {
     var dataList = <ChartData>[];
     var query = '''
       from(bucket: "NPS-Sensor-Data")
@@ -161,7 +161,7 @@ class DataServices {
       |> filter(fn: (r) => r["_measurement"] == "mqtt_consumer")
       |> filter(fn: (r) => r["_field"] == "value")
       |> filter(fn: (r) => r["host"] == "nps-sensornet-broker")
-      |> filter(fn: (r) => r["topic"] == "/esp32s3_theta/pmsaqi/pm10")
+      |> filter(fn: (r) => r["topic"] == "/esp32s3_$node/pmsaqi/pm10")
       |> aggregateWindow(every: 1m, fn: mean, createEmpty: false)
       |> yield(name: "mean")
     ''';
@@ -173,7 +173,7 @@ class DataServices {
     return dataList;
   }
 
-  static Future<List<ChartData>> fetchDataTemp() async {
+  static Future<List<ChartData>> fetchDataTemp(node) async {
     var dataList = <ChartData>[];
     var query = '''
       from(bucket: "NPS-Sensor-Data")
@@ -181,7 +181,7 @@ class DataServices {
       |> filter(fn: (r) => r["_measurement"] == "mqtt_consumer")
       |> filter(fn: (r) => r["_field"] == "value")
       |> filter(fn: (r) => r["host"] == "nps-sensornet-broker")
-      |> filter(fn: (r) => r["topic"] == "/esp32s3_theta/bme280/temp")
+      |> filter(fn: (r) => r["topic"] == "/esp32s3_$node/bme280/temp")
       |> aggregateWindow(every: 1m, fn: mean, createEmpty: false)
       |> yield(name: "mean")
     ''';
@@ -193,7 +193,7 @@ class DataServices {
     return dataList;
   }
 
-  static Future<List<ChartData>> fetchDataHumidity() async {
+  static Future<List<ChartData>> fetchDataHumidity(node) async {
     var dataList = <ChartData>[];
     var query = '''
       from(bucket: "NPS-Sensor-Data")
@@ -201,7 +201,7 @@ class DataServices {
       |> filter(fn: (r) => r["_measurement"] == "mqtt_consumer")
       |> filter(fn: (r) => r["_field"] == "value")
       |> filter(fn: (r) => r["host"] == "nps-sensornet-broker")
-      |> filter(fn: (r) => r["topic"] == "/esp32s3_theta/bme280/humidity")
+      |> filter(fn: (r) => r["topic"] == "/esp32s3_$node/bme280/humidity")
       |> aggregateWindow(every: 1m, fn: mean, createEmpty: false)
       |> yield(name: "mean")
     ''';
@@ -213,7 +213,7 @@ class DataServices {
     return dataList;
   }
 
-  static Future<List<ChartData>> fetchDataSound() async {
+  static Future<List<ChartData>> fetchDataSound(node) async {
     var dataList = <ChartData>[];
     var query = '''
       from(bucket: "NPS-Sensor-Data")
@@ -221,7 +221,7 @@ class DataServices {
       |> filter(fn: (r) => r["_measurement"] == "mqtt_consumer")
       |> filter(fn: (r) => r["_field"] == "value")
       |> filter(fn: (r) => r["host"] == "nps-sensornet-broker")
-      |> filter(fn: (r) => r["topic"] == "/esp32s3_theta/mic/dBA")
+      |> filter(fn: (r) => r["topic"] == "/esp32s3_$node/mic/dBA")
       |> aggregateWindow(every: 1m, fn: mean, createEmpty: false)
       |> yield(name: "mean")
     ''';

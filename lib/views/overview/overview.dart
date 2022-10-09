@@ -16,7 +16,7 @@ class OverviewPage extends StatelessWidget {
         Expanded(
           child: ListView(
             children: [
-              if (Responsive.isLargeScreen(context))
+              if (!Responsive.isSmallScreen(context))
                 const OverviewCardsLarge()
               else
                 const OverviewCardsSmall()

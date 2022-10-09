@@ -4,8 +4,8 @@ import 'package:nps_webapp/controllers/influx_controller.dart';
 import 'package:nps_webapp/models/chart_data.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
-class GraphCard extends StatelessWidget {
-  GraphCard({
+class GraphCardSmall extends StatelessWidget {
+  GraphCardSmall({
     Key? key,
   }) : super(key: key);
 
@@ -16,7 +16,7 @@ class GraphCard extends StatelessWidget {
           flex: 4,
           child: Container(
             child: SfCartesianChart(
-              legend: Legend(isVisible: true, position: LegendPosition.left),
+              legend: Legend(isVisible: true, position: LegendPosition.bottom),
               primaryXAxis: DateTimeAxis(
                   labelStyle: const TextStyle(color: Colors.black),
                   majorGridLines: const MajorGridLines(
