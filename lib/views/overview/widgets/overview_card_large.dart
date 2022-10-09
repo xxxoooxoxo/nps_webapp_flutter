@@ -17,7 +17,7 @@ class OverviewCardsLarge extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
+          const Padding(
             padding: EdgeInsets.only(bottom: 20.0, left: 20),
             child: Text(
               "THETA NODE",
@@ -28,34 +28,33 @@ class OverviewCardsLarge extends StatelessWidget {
                   fontStyle: FontStyle.italic),
             ),
           ),
-          Row(
-            children: [
-              GraphCard(),
-            ],
-          ),
+          Expanded(child: GraphCard()),
           SizedBox(
             height: width / 64,
           ),
           Row(
             children: [
-              TempGauge(),
+              Expanded(child: TempGauge()),
               SizedBox(
                 width: width / 64,
               ),
-              HumidityGauge(),
+              const Expanded(child: HumidityGauge()),
               SizedBox(
                 width: width / 64,
               ),
-              SoundGauge(),
+              const Expanded(child: SoundGauge()),
               SizedBox(
                 width: width / 64,
               ),
-              PMGauge10(),
+              const Expanded(child: PMGauge10()),
               SizedBox(
                 width: width / 64,
               ),
-              PMGauge25(),
+              const Expanded(child: PMGauge25()),
             ],
+          ),
+          const SizedBox(
+            height: 30,
           )
         ],
       ),

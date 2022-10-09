@@ -2,12 +2,11 @@
 import 'package:flutter/material.dart';
 import '../constants/style.dart';
 import '../helpers/responsive.dart';
-import 'custom_text.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
     AppBar(
-      leading: !Responsive.isSmallScreen(context)
+      leading: Responsive.isLargeScreen(context)
           ? SizedBox()
           : IconButton(
               icon: const Icon(
@@ -29,21 +28,23 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
           },
           child: Center(
             child: Row(
-              children: const [
+              children: [
                 Text(
-                  "NETWORKED PUBLIC SPACE  |",
+                  "NETWORKED PUBLIC SPACE",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                       fontSize: 16),
                 ),
-                Text(
-                  " NODE DASHBOARD",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w100,
-                      color: Colors.white,
-                      fontSize: 16),
-                ),
+                Responsive.isLargeScreen(context)
+                    ? Text(
+                        "  |  NODE DASHBOARD",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w100,
+                            color: Colors.white,
+                            fontSize: 16),
+                      )
+                    : SizedBox(),
               ],
             ),
           ),

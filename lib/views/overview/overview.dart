@@ -11,19 +11,8 @@ class OverviewPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Expanded(
-          child: ListView(
-            children: [
-              if (!Responsive.isSmallScreen(context))
-                const OverviewCardsLarge()
-              else
-                const OverviewCardsSmall()
-            ],
-          ),
-        )
-      ],
-    );
+    return !Responsive.isSmallScreen(context)
+        ? const OverviewCardsLarge()
+        : const OverviewCardsSmall();
   }
 }
