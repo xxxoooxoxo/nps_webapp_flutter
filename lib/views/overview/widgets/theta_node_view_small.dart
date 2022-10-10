@@ -30,7 +30,7 @@ class ThetaNodeViewSmall extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: const Text(
-                      "THETA NODE",
+                      "NODE 8",
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 26,
@@ -47,7 +47,7 @@ class ThetaNodeViewSmall extends StatelessWidget {
                       child: const Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Text(
-                          "CHANGE",
+                          "BACK TO MAP",
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 16,

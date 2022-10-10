@@ -30,7 +30,7 @@ class DeltaNodeViewSmall extends StatelessWidget {
                   child: const Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Text(
-                      "DELTA NODE",
+                      "NODE 4",
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 26,
@@ -47,7 +47,7 @@ class DeltaNodeViewSmall extends StatelessWidget {
                       child: const Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Text(
-                          "CHANGE",
+                          "BACK TO MAP",
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 16,

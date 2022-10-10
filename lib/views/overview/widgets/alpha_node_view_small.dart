@@ -28,7 +28,7 @@ class AlphaNodeViewSmall extends StatelessWidget {
                   child: const Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Text(
-                      "ALPHA NODE",
+                      "NODE 1",
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 26,
@@ -45,7 +45,7 @@ class AlphaNodeViewSmall extends StatelessWidget {
                       child: const Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Text(
-                          "CHANGE",
+                          "BACK TO MAP",
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 16,

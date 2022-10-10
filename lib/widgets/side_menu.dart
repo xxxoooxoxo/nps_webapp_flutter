@@ -50,24 +50,6 @@ class SideMenu extends StatelessWidget {
               ),
             ),
           ),
-          GestureDetector(
-            onTap: () => launch('https://www.networkedpublicspace.org'),
-            child: Padding(
-              padding: const EdgeInsets.only(right: 20),
-              child: Container(
-                height: 40,
-                color: Colors.black,
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 10, 0, 0),
-                  child: Text(
-                    'LEARN MORE',
-                    style: TextStyle(
-                        fontStyle: FontStyle.italic, color: Colors.white),
-                  ),
-                ),
-              ),
-            ),
-          )
         ],
       ),
     );

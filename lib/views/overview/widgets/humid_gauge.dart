@@ -48,7 +48,7 @@ class HumidityGauge extends StatelessWidget {
                                   children: <Widget>[
                                     Text(
                                         controller.humidity.value == 0
-                                            ? "Loading"
+                                            ? "Offline"
                                             : controller.humidity.value
                                                 .toString(),
                                         style: const TextStyle(

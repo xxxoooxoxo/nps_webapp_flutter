@@ -32,7 +32,7 @@ class NodeMapPage extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: const Center(
                 child: Text(
-                  "IOTA",
+                  "9",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.italic,
@@ -51,7 +51,7 @@ class NodeMapPage extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: const Center(
                 child: Text(
-                  "THETA",
+                  "8",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.italic,
@@ -70,7 +70,7 @@ class NodeMapPage extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: const Center(
                 child: Text(
-                  "ETA",
+                  "7",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.italic,
@@ -89,7 +89,7 @@ class NodeMapPage extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: const Center(
                 child: Text(
-                  "ZETA",
+                  "6",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.italic,
@@ -108,7 +108,7 @@ class NodeMapPage extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: const Center(
                 child: Text(
-                  "EPSILON",
+                  "5",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.italic,
@@ -127,7 +127,7 @@ class NodeMapPage extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: const Center(
                 child: Text(
-                  "DELTA",
+                  "4",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.italic,
@@ -146,7 +146,7 @@ class NodeMapPage extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: const Center(
                 child: Text(
-                  "GAMMA",
+                  "3",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.italic,
@@ -165,7 +165,7 @@ class NodeMapPage extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: const Center(
                 child: Text(
-                  "BETA",
+                  "2",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.italic,
@@ -184,7 +184,7 @@ class NodeMapPage extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: const Center(
                 child: Text(
-                  "ALPHA",
+                  "1",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.italic,

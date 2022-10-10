@@ -51,7 +51,7 @@ class PMGauge10 extends StatelessWidget {
                                   children: [
                                     Text(
                                         controller.pm10.value == 0
-                                            ? "Loading"
+                                            ? "Offline"
                                             : controller.pm10.value.toString(),
                                         style: const TextStyle(
                                             fontWeight: FontWeight.bold,
@@ -102,7 +102,6 @@ class PMGauge10 extends StatelessWidget {
                     )),
               ],
             )),
-            color: Colors.white,
           ),
         ));
   }
@@ -151,7 +150,7 @@ class PMGauge25 extends StatelessWidget {
                                   children: [
                                     Text(
                                         controller.pm25.value == 0
-                                            ? "Loading"
+                                            ? "Offline"
                                             : controller.pm25.value.toString(),
                                         style: const TextStyle(
                                             fontWeight: FontWeight.bold,

@@ -31,7 +31,7 @@ class ZetaNodeViewSmall extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: const Text(
-                      "ZETA NODE",
+                      "NODE 6",
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 26,
@@ -48,7 +48,7 @@ class ZetaNodeViewSmall extends StatelessWidget {
                       child: const Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Text(
-                          "CHANGE",
+                          "BACK TO MAP",
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 16,

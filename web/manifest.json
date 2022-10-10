@@ -1,11 +1,11 @@
 {
-    "name": "nps_webapp",
-    "short_name": "nps_webapp",
+    "name": "Networked Public Space",
+    "short_name": "NPS | Node Dashboard",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Empowering communities to make change",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

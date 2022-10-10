@@ -46,7 +46,7 @@ class SoundGauge extends StatelessWidget {
                                   children: [
                                     Text(
                                         controller.temp.value == 0
-                                            ? "Loading"
+                                            ? "Offline"
                                             : controller.sound.value.toString(),
                                         style: const TextStyle(
                                             fontWeight: FontWeight.bold,
@@ -59,7 +59,7 @@ class SoundGauge extends StatelessWidget {
                                 widget: Padding(
                                   padding: EdgeInsets.fromLTRB(0, 2, 0, 0),
                                   child: Text(
-                                    'dB',
+                                    'dBA',
                                     style: TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.normal),

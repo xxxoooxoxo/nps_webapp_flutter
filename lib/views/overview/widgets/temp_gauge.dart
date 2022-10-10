@@ -48,7 +48,7 @@ class TempGauge extends StatelessWidget {
                                   children: [
                                     Text(
                                         controller.temp.value == 0
-                                            ? "Loading"
+                                            ? "Offline"
                                             : controller.temp.value.toString(),
                                         style: const TextStyle(
                                             fontWeight: FontWeight.bold,

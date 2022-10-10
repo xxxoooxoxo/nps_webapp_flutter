@@ -33,7 +33,7 @@ class EtaNodeView extends StatelessWidget {
                   child: const Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Text(
-                      "ETA NODE",
+                      "NODE 7",
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 26,
@@ -50,7 +50,7 @@ class EtaNodeView extends StatelessWidget {
                       child: const Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Text(
-                          "CHANGE",
+                          "BACK TO MAP",
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 16,
