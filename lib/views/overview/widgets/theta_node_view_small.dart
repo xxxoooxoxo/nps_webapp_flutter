@@ -5,6 +5,7 @@ import 'package:nps_webapp/constants/controllers.dart';
 import 'package:nps_webapp/views/overview/widgets/graph_card_small.dart';
 import 'package:nps_webapp/views/overview/widgets/humid_gauge.dart';
 import 'package:nps_webapp/views/overview/widgets/pm_gauge.dart';
+import 'package:nps_webapp/views/overview/widgets/sound_gauge.dart';
 import 'package:nps_webapp/views/overview/widgets/temp_gauge.dart';
 
 import '../../../controllers/influx_controller_theta.dart';
@@ -71,6 +72,15 @@ class ThetaNodeViewSmall extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: HumidityGauge(
+              controller: controller,
+            ),
+          ),
+          SizedBox(
+            height: height / 64,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: SoundGauge(
               controller: controller,
             ),
           ),
