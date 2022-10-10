@@ -1,6 +1,5 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SideMenu extends StatelessWidget {
@@ -9,11 +8,6 @@ class SideMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // decoration: const BoxDecoration(
-      //   border: Border(
-      //     left: BorderSide(width: .8, color: Colors.black),
-      //   ),
-      // ),
       child: ListView(
         children: [
           Padding(

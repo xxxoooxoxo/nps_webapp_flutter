@@ -1,15 +1,16 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:nps_webapp/controllers/influx_controller.dart';
+import 'package:nps_webapp/controllers/influx_controller_theta.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 class HumidityGauge extends StatelessWidget {
-  const HumidityGauge({Key? key}) : super(key: key);
+  final controller;
+  const HumidityGauge({Key? key, @required this.controller}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<InfluxController>();
+    // final controller = Get.find<InfluxControllerTheta>();
 
     return Obx(() => DottedBorder(
           dashPattern: const [4, 4],
@@ -100,7 +101,6 @@ class HumidityGauge extends StatelessWidget {
                     )),
               ],
             )),
-            color: Colors.white,
           ),
         ));
   }

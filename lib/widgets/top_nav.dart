@@ -29,13 +29,21 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
           child: Center(
             child: Row(
               children: [
-                Text(
-                  "NETWORKED PUBLIC SPACE",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontSize: 16),
-                ),
+                Responsive.isLargeScreen(context)
+                    ? Text(
+                        "NETWORKED PUBLIC SPACE",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 16),
+                      )
+                    : Text(
+                        "",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 16),
+                      ),
                 Responsive.isLargeScreen(context)
                     ? Text(
                         "  |  NODE DASHBOARD",
@@ -50,4 +58,21 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
           ),
         ),
       ),
+      actions: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(0, 20, 40, 20),
+          child: GestureDetector(
+            onTap: () => launch('https://www.networkedpublicspace.org'),
+            child: Center(
+              child: Text(
+                "WEBSITE",
+                style: TextStyle(
+                    fontWeight: FontWeight.w100,
+                    color: Colors.white,
+                    fontSize: 16),
+              ),
+            ),
+          ),
+        )
+      ],
     );

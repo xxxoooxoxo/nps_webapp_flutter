@@ -3,16 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
-import '../../../controllers/influx_controller.dart';
+import '../../../controllers/influx_controller_theta.dart';
 
 class PMGauge10 extends StatelessWidget {
+  final controller;
   const PMGauge10({
     Key? key,
+    this.controller,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<InfluxController>();
+    final controller = Get.find<InfluxControllerTheta>();
     return Obx(() => DottedBorder(
           dashPattern: const [4, 4],
           child: Container(
@@ -107,13 +109,12 @@ class PMGauge10 extends StatelessWidget {
 }
 
 class PMGauge25 extends StatelessWidget {
-  const PMGauge25({
-    Key? key,
-  }) : super(key: key);
+  final controller;
+  const PMGauge25({Key? key, @required this.controller}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<InfluxController>();
+    final controller = Get.find<InfluxControllerTheta>();
     return Obx(() => DottedBorder(
           dashPattern: const [4, 4],
           child: Container(
@@ -201,7 +202,6 @@ class PMGauge25 extends StatelessWidget {
                     )),
               ],
             )),
-            color: Colors.white,
           ),
         ));
   }

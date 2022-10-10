@@ -13,6 +13,7 @@ class SiteLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       key: scaffoldKey,
       appBar: topNavigationBar(context, scaffoldKey),
       drawer: const Drawer(

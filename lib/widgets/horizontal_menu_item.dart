@@ -45,7 +45,6 @@ class HorizontalMenuItem extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.all(16),
-                child: menuController.returnIconFor(itemName),
               ),
               if (!menuController.isActive(itemName))
                 Flexible(

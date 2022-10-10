@@ -5,6 +5,6 @@ import 'package:nps_webapp/routing/routes.dart';
 
 Navigator localNavigator() => Navigator(
       key: navigationController.navigationKey,
-      initialRoute: overViewPageRoute,
+      initialRoute: nodeMapRoute,
       onGenerateRoute: generateRoute,
     );

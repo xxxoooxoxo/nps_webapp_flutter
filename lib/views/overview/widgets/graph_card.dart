@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:nps_webapp/controllers/influx_controller.dart';
+import 'package:nps_webapp/controllers/influx_controller_theta.dart';
 import 'package:nps_webapp/models/chart_data.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
@@ -11,7 +11,7 @@ class GraphCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var influxController = Get.find<InfluxController>();
+    var influxController = Get.find<InfluxControllerTheta>();
     return Obx(() => Container(
           child: SfCartesianChart(
             legend: Legend(isVisible: true, position: LegendPosition.left),
@@ -71,7 +71,6 @@ class GraphCard extends StatelessWidget {
                   yValueMapper: (ChartData data, _) => data.y),
             ],
           ),
-          color: Colors.white,
           height: 300,
         ));
   }
