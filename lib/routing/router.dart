@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nps_webapp/views/node_map.dart';
+import 'package:nps_webapp/views/overview/all_page.dart';
 import 'package:nps_webapp/views/overview/alpha_page.dart';
 import 'package:nps_webapp/views/overview/beta_page.dart';
 import 'package:nps_webapp/views/overview/epsilon_page.dart';
@@ -14,6 +15,8 @@ import '../views/overview/eta_page.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
+    case allPageRoute:
+      return _getPageRoute(AllPage());
     case alphaPageRoute:
       return _getPageRoute(const AlphaPage());
     case betaPageRoute:

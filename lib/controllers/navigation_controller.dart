@@ -11,6 +11,10 @@ class NavigationController extends GetxController {
     return navigationKey.currentState!.pushNamed(routeName);
   }
 
+  Future<dynamic> specialNavigateTo(String routeName) {
+    return navigationKey.currentState!.pushNamed(routeName);
+  }
+
   goBack() {
     isMain.value = true;
     navigationKey.currentState!.pop();

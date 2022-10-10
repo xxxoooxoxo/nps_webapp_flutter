@@ -22,9 +22,9 @@ class InfluxControllerGamma extends GetxController {
     fetchData();
     updateData();
     var _gaugeTimer =
-        new Timer.periodic(Duration(seconds: 1), (_) => updateData());
+        new Timer.periodic(Duration(seconds: 3), (_) => updateData());
     var _graphTimer =
-        new Timer.periodic(Duration(seconds: 60), (_) => fetchData());
+        new Timer.periodic(Duration(seconds: 90), (_) => fetchData());
     super.onInit();
   }
 

@@ -1,3 +1,4 @@
+const allPageRoute = 'all';
 const alphaPageRoute = 'alpha';
 const betaPageRoute = 'beta';
 const gammaPageRoute = 'gamma';
@@ -10,6 +11,7 @@ const iotaPageRoute = 'iota';
 const nodeMapRoute = 'map';
 
 List sideMenuItems = [
+  allPageRoute,
   alphaPageRoute,
   betaPageRoute,
   gammaPageRoute,

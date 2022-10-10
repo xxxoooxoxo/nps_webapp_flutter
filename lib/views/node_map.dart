@@ -3,6 +3,7 @@ import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:nps_webapp/constants/controllers.dart';
+import 'package:nps_webapp/helpers/responsive.dart';
 import 'package:nps_webapp/routing/routes.dart';
 
 class NodeMapPage extends StatelessWidget {
@@ -194,6 +195,28 @@ class NodeMapPage extends StatelessWidget {
               ),
             ),
           ),
+          const SizedBox(height: 10),
+          !Responsive.isSmallScreen(context)
+              ? GestureDetector(
+                  onTap: () =>
+                      navigationController.specialNavigateTo(allPageRoute),
+                  child: Container(
+                    width: 85,
+                    color: Colors.black,
+                    padding: const EdgeInsets.all(10),
+                    child: const Center(
+                      child: Text(
+                        "VIEW ALL",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontStyle: FontStyle.italic,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                )
+              : SizedBox(),
         ],
       ),
     );
