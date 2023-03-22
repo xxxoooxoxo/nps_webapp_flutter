@@ -51,8 +51,8 @@ class PMGauge10 extends StatelessWidget {
                                   children: [
                                     Text(
                                         controller.pm10.value == 0
-                                            ? "Offline"
-                                            : controller.pm10.value.toString(),
+                                            ? "2"
+                                            : "2", //2controller.pm10.value.toString(),
                                         style: const TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 24)),
@@ -84,7 +84,7 @@ class PMGauge10 extends StatelessWidget {
                           ],
                           pointers: <GaugePointer>[
                             RangePointer(
-                              value: controller.pm10.value.toDouble(),
+                              value: 2, //controller.pm10.value.toDouble(),
                               width: 8,
                               pointerOffset: -1,
                               cornerStyle: CornerStyle.startCurve,
@@ -150,8 +150,8 @@ class PMGauge25 extends StatelessWidget {
                                   children: [
                                     Text(
                                         controller.pm25.value == 0
-                                            ? "Offline"
-                                            : controller.pm25.value.toString(),
+                                            ? "2"
+                                            : "2", //controller.pm25.value.toString(),
                                         style: const TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 24)),
@@ -183,7 +183,7 @@ class PMGauge25 extends StatelessWidget {
                           ],
                           pointers: <GaugePointer>[
                             RangePointer(
-                              value: controller.pm10.value.toDouble(),
+                              value: 2, //controller.pm10.value.toDouble(),
                               width: 8,
                               pointerOffset: -1,
                               cornerStyle: CornerStyle.startCurve,

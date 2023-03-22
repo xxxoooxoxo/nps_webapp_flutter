@@ -1,5 +1,9 @@
+import 'dart:collection';
+
 import 'package:flutter/material.dart';
-import 'package:nps_webapp/views/node_map.dart';
+
+import 'package:nps_webapp/routing/routes.dart';
+import 'package:nps_webapp/views/map_view.dart';
 import 'package:nps_webapp/views/overview/all_page.dart';
 import 'package:nps_webapp/views/overview/alpha_page.dart';
 import 'package:nps_webapp/views/overview/beta_page.dart';
@@ -7,7 +11,6 @@ import 'package:nps_webapp/views/overview/epsilon_page.dart';
 import 'package:nps_webapp/views/overview/gamma_page.dart';
 import 'package:nps_webapp/views/overview/iota_page.dart';
 import 'package:nps_webapp/views/overview/theta_page.dart';
-import 'package:nps_webapp/routing/routes.dart';
 import 'package:nps_webapp/views/overview/zeta_page.dart';
 
 import '../views/overview/delta_page.dart';
@@ -36,7 +39,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case iotaPageRoute:
       return _getPageRoute(const IotaPage());
     default:
-      return _getPageRoute(const NodeMapPage());
+      return _getPageRoute(const MapScreen());
   }
 }
 

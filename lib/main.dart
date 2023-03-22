@@ -11,11 +11,12 @@ import 'package:nps_webapp/controllers/influx_controller_iota.dart';
 import 'package:nps_webapp/controllers/influx_controller_theta.dart';
 import 'package:nps_webapp/controllers/influx_controller_zeta.dart';
 import 'package:nps_webapp/site_layout.dart';
+import 'package:nps_webapp/views/map_view.dart';
 import 'controllers/menu_controller.dart';
 import 'controllers/navigation_controller.dart';
 
 void main() {
-  Get.put(MenuController());
+  Get.put(CustomMenuController());
   Get.put(NavigationController());
   Get.put(InfluxControllerTheta());
   Get.put(InfluxControllerAlpha());
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Networked Public Space | Node Dashboard',
       theme: ThemeData(
-        primarySwatch: MaterialColor(
+        primarySwatch: const MaterialColor(
           0x00000000,
           <int, Color>{
             50: Color(0xFFFAFAFA),
@@ -56,7 +57,7 @@ class MyApp extends StatelessWidget {
             900: Color(0xFF212121),
           },
         ),
-        appBarTheme: AppBarTheme(color: Colors.black),
+        appBarTheme: const AppBarTheme(color: Colors.black),
         fontFamily: GoogleFonts.openSans().fontFamily,
         scaffoldBackgroundColor: Colors.white,
         textTheme:

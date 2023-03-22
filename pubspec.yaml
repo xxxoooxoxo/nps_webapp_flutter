@@ -18,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.16.2 <3.0.0"
+  sdk: '>=2.19.0 <3.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -42,6 +42,9 @@ dependencies:
   url_launcher: ^6.1.6
   dotted_border: ^2.0.0+2
   toggle_switch: ^2.0.1
+  google_maps_flutter: ^2.2.5
+  google_maps_flutter_web: ^0.4.0+7
+  custom_info_window: ^1.0.1
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +72,8 @@ flutter:
   assets:
     - assets/images/logo.png
     - assets/images/background.png
+    - assets/map_style.json
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

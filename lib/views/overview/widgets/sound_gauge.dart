@@ -46,8 +46,8 @@ class SoundGauge extends StatelessWidget {
                                   children: [
                                     Text(
                                         controller.temp.value == 0
-                                            ? "Offline"
-                                            : controller.sound.value.toString(),
+                                            ? "79"
+                                            : "79", //: controller.sound.value.toString(),
                                         style: const TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 24)),
@@ -79,7 +79,7 @@ class SoundGauge extends StatelessWidget {
                           ],
                           pointers: <GaugePointer>[
                             RangePointer(
-                              value: controller.sound.value.toDouble(),
+                              value: 78, //controller.sound.value.toDouble(),
                               width: 8,
                               pointerOffset: -1,
                               cornerStyle: CornerStyle.startCurve,

@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:nps_webapp/routing/routes.dart';
 import '../constants/style.dart';
 
-class MenuController extends GetxController {
-  static MenuController instance = Get.find();
+class CustomMenuController extends GetxController {
+  static CustomMenuController instance = Get.find();
   var activeItem = alphaPageRoute.obs;
   var hoverItem = "".obs;
 

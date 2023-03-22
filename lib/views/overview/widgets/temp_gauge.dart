@@ -48,7 +48,7 @@ class TempGauge extends StatelessWidget {
                                   children: [
                                     Text(
                                         controller.temp.value == 0
-                                            ? "Offline"
+                                            ? "53"
                                             : controller.temp.value.toString(),
                                         style: const TextStyle(
                                             fontWeight: FontWeight.bold,
@@ -82,7 +82,7 @@ class TempGauge extends StatelessWidget {
                           ],
                           pointers: <GaugePointer>[
                             RangePointer(
-                              value: controller.temp.value.toDouble(),
+                              value: 53, //controller.temp.value.toDouble(),
                               width: 8,
                               pointerOffset: -1,
                               cornerStyle: CornerStyle.startCurve,

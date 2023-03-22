@@ -17,7 +17,7 @@ class DataServices {
   static Future<int> getHumidity(node) async {
     var query = '''
     from(bucket: "NPS-Sensor-Data")
-    |> range(start: -1h)
+    |> range(start: time(v: "2022-10-10T07:00:00.000Z"), stop: time(v:"2022-10-10T22:00:00.000Z"))
     |> filter(fn: (r) => r["_measurement"] == "mqtt_consumer")
     |> filter(fn: (r) => r["_field"] == "value")
     |> filter(fn: (r) => r["host"] == "nps-sensornet-broker")
@@ -37,7 +37,7 @@ class DataServices {
   static Future<int> getPM10(node) async {
     var query = '''
     from(bucket: "NPS-Sensor-Data")
-    |> range(start: -1h)
+    |> range(start: time(v: "2022-10-10T07:00:00.000Z"), stop: time(v:"2022-10-10T22:00:00.000Z"))
     |> filter(fn: (r) => r["_measurement"] == "mqtt_consumer")
     |> filter(fn: (r) => r["_field"] == "value")
     |> filter(fn: (r) => r["host"] == "nps-sensornet-broker")
@@ -57,7 +57,7 @@ class DataServices {
   static Future<int> getPM25(node) async {
     var query = '''
     from(bucket: "NPS-Sensor-Data")
-    |> range(start: -1h)
+    |> range(start: time(v: "2022-10-10T07:00:00.000Z"), stop: time(v:"2022-10-10T22:00:00.000Z"))
     |> filter(fn: (r) => r["_measurement"] == "mqtt_consumer")
     |> filter(fn: (r) => r["_field"] == "value")
     |> filter(fn: (r) => r["host"] == "nps-sensornet-broker")
@@ -77,7 +77,7 @@ class DataServices {
   static Future<int> getSound(node) async {
     var query = '''
     from(bucket: "NPS-Sensor-Data")
-    |> range(start: -1h)
+    |> range(start: time(v: "2022-10-10T07:00:00.000Z"), stop: time(v:"2022-10-10T22:00:00.000Z"))
     |> filter(fn: (r) => r["_measurement"] == "mqtt_consumer")
     |> filter(fn: (r) => r["_field"] == "value")
     |> filter(fn: (r) => r["host"] == "nps-sensornet-broker")
@@ -97,7 +97,7 @@ class DataServices {
   static Future<int> getTemp(node) async {
     var query = '''
     from(bucket: "NPS-Sensor-Data")
-    |> range(start: -1h)
+    |> range(start: time(v: "2022-10-10T07:00:00.000Z"), stop: time(v:"2022-10-10T22:00:00.000Z"))
     |> filter(fn: (r) => r["_measurement"] == "mqtt_consumer")
     |> filter(fn: (r) => r["_field"] == "value")
     |> filter(fn: (r) => r["host"] == "nps-sensornet-broker")
@@ -137,7 +137,7 @@ class DataServices {
     var dataList = <ChartData>[];
     var query = '''
       from(bucket: "NPS-Sensor-Data")
-      |> range(start: -1h)
+      |> range(start: time(v: "2022-10-10T07:00:00.000Z"), stop: time(v:"2022-10-10T22:00:00.000Z"))
       |> filter(fn: (r) => r["_measurement"] == "mqtt_consumer")
       |> filter(fn: (r) => r["_field"] == "value")
       |> filter(fn: (r) => r["host"] == "nps-sensornet-broker")
@@ -157,7 +157,7 @@ class DataServices {
     var dataList = <ChartData>[];
     var query = '''
       from(bucket: "NPS-Sensor-Data")
-      |> range(start: -1h)
+      |> range(start: time(v: "2022-10-10T07:00:00.000Z"), stop: time(v:"2022-10-10T22:00:00.000Z"))
       |> filter(fn: (r) => r["_measurement"] == "mqtt_consumer")
       |> filter(fn: (r) => r["_field"] == "value")
       |> filter(fn: (r) => r["host"] == "nps-sensornet-broker")
@@ -177,7 +177,7 @@ class DataServices {
     var dataList = <ChartData>[];
     var query = '''
       from(bucket: "NPS-Sensor-Data")
-      |> range(start: -1h)
+      |> range(start: time(v: "2022-10-10T07:00:00.000Z"), stop: time(v:"2022-10-10T22:00:00.000Z"))
       |> filter(fn: (r) => r["_measurement"] == "mqtt_consumer")
       |> filter(fn: (r) => r["_field"] == "value")
       |> filter(fn: (r) => r["host"] == "nps-sensornet-broker")
@@ -197,7 +197,7 @@ class DataServices {
     var dataList = <ChartData>[];
     var query = '''
       from(bucket: "NPS-Sensor-Data")
-      |> range(start: -1h)
+      |> range(start: time(v: "2022-10-10T07:00:00.000Z"), stop: time(v:"2022-10-10T22:00:00.000Z"))
       |> filter(fn: (r) => r["_measurement"] == "mqtt_consumer")
       |> filter(fn: (r) => r["_field"] == "value")
       |> filter(fn: (r) => r["host"] == "nps-sensornet-broker")
@@ -217,7 +217,7 @@ class DataServices {
     var dataList = <ChartData>[];
     var query = '''
       from(bucket: "NPS-Sensor-Data")
-      |> range(start: -1h)
+      |> range(start: time(v: "2022-10-10T07:00:00.000Z"), stop: time(v:"2022-10-10T22:00:00.000Z"))
       |> filter(fn: (r) => r["_measurement"] == "mqtt_consumer")
       |> filter(fn: (r) => r["_field"] == "value")
       |> filter(fn: (r) => r["host"] == "nps-sensornet-broker")

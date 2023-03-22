@@ -48,7 +48,7 @@ class HumidityGauge extends StatelessWidget {
                                   children: <Widget>[
                                     Text(
                                         controller.humidity.value == 0
-                                            ? "Offline"
+                                            ? "42"
                                             : controller.humidity.value
                                                 .toString(),
                                         style: const TextStyle(
@@ -83,7 +83,7 @@ class HumidityGauge extends StatelessWidget {
                           ],
                           pointers: <GaugePointer>[
                             RangePointer(
-                              value: controller.humidity.value.toDouble(),
+                              value: 42, //controller.humidity.value.toDouble(),
                               width: 8,
                               pointerOffset: -1,
                               cornerStyle: CornerStyle.startCurve,
